@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace tema4
 {
+    [Serializable]
     class CPhone
     {
-        public int id;
+        //public int id;
         public string brand;
         public string model;
         public string camera;
@@ -16,9 +17,6 @@ namespace tema4
         public string osVersion;
         public string memory;
 
-        CPhone()
-        {
-
-        }
+        //public CPhone() { }
     }
 }

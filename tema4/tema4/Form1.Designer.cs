@@ -45,7 +45,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(184, 105);
+            this.button2.Location = new System.Drawing.Point(191, 105);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(166, 23);
             this.button2.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 80);
+            this.label1.Size = new System.Drawing.Size(348, 80);
             this.label1.TabIndex = 2;
             this.label1.Text = "Phone Catalog";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 146);
+            this.ClientSize = new System.Drawing.Size(369, 146);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

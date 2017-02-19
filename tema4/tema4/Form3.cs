@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,60 +14,94 @@ namespace tema4
 {
     public partial class Form3 : Form
     {
-        List<CPhone> list1 = new List<CPhone>();
-
+ 
         public Form3()
         {
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e) //ADD
+
+        private bool validate()
         {
-            
+            bool validate=true;
+
+            if (brandTxtBox.Text == "")
+            {
+                errorProvider1.SetError(brandTxtBox, "Fill the brand");
+                validate = false;
+            }
+
+            if (modelTxtBox.Text == "")
+            {
+                errorProvider1.SetError(modelTxtBox, "Fill the model");
+                validate = false;
+            }
+
+            if (osTxtBox.Text == "")
+            {
+                errorProvider1.SetError(osTxtBox, "Fill the Operating System");
+                validate = false;
+            }
+
+            if (osVerTxtBox.Text == "")
+            {
+                errorProvider1.SetError(osVerTxtBox, "Fill the version of the OS");
+                validate = false;
+            }
+
+            if (memoryTxtBox.Text == "")
+            {
+                errorProvider1.SetError(memoryTxtBox, "Fill the size of the memory");
+                validate = false;
+            }
+
+            if (cameraTxtBox.Text == "")
+            {
+                errorProvider1.SetError(cameraTxtBox, "Fill info about camera");
+                validate = false;
+            }
+
+            return validate;
+        } //валидация
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        { //premahva (!), kogato teksta se smeni
+            TextBox txtBox = (TextBox) sender;
+
+            if (txtBox.Text != "")
+            {
+                errorProvider1.SetError(txtBox, "");
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addButton_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            
-            if(textBox1.Text=="")
-            {
-                errorProvider1.SetError(textBox1, "Fill the brand");
-                return;
-            }
 
-            if(textBox2.Text=="")
-            {
-                errorProvider1.SetError(textBox2, "Fill the model");
-                return;
-            }
+            if (!validate()) { return; } //има празни полета
 
-            if (textBox3.Text == "")
-            {
-                errorProvider1.SetError(textBox3, "Fill the Operating System");
-                return;
-            }
 
-            if (textBox4.Text == "")
-            {
-                errorProvider1.SetError(textBox4, "Fill the version of the OS");
-                return;
-            }
+            FileStream fs;
+            try { fs = new FileStream("data.dat", FileMode.OpenOrCreate); }
+            catch { MessageBox.Show("Error when creating or opening file."); return; }
 
-            if (textBox5.Text == "")
-            {
-                errorProvider1.SetError(textBox5, "Fill the size of the memory");
-                return;
-            }
+            BinaryFormatter bf = new BinaryFormatter();
 
-            if (textBox6.Text == "")
-            {
-                errorProvider1.SetError(textBox6, "Fill info about camera");
-                return;
-            }
+            CPhone phone = new CPhone();
 
-            list1[i].brand = textBox1.Text;
-            list1[i].model = textBox2.Text;
+            phone.brand = brandTxtBox.Text;
+            phone.model = modelTxtBox.Text;
+            phone.os = osTxtBox.Text;
+            phone.osVersion = osVerTxtBox.Text;
+            phone.memory = memoryTxtBox.Text;
+            phone.camera = cameraTxtBox.Text;
+
+            bf.Serialize(fs, phone);
+            fs.Close();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
