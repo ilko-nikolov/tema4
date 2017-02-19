@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace tema4
 {
     [Serializable]
-    class CPhone
+    public class CPhone
     {
         //public int id;
         public string brand;

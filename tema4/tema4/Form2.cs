@@ -28,11 +28,15 @@ namespace tema4
         {
             brandLbl.Text = modelLbl.Text = osLbl.Text = osVerLbl.Text = memoryLbl.Text = cameraLbl.Text = "";
             //изчистване на label-ите, където ще се появи информацията за намерения телефон
+
+            //loadPhones();
+            try { phonesList = XmlSerialization.ReadFromXmlFile<List<CPhone>>("data.xml"); }
+            catch { MessageBox.Show("Error when reading data file"); }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            int elemNumber = 0;
+            int elemNumber = 0; elements.Clear();
             listBox1.Items.Clear();
             foreach(var phone in phonesList)
             {
@@ -62,37 +66,42 @@ namespace tema4
             cameraLbl.Text = "Camera: " + phone.camera;
         }
 
-        private bool loadPhones()
-        {
-            FileStream fs;
-            BinaryFormatter bf = new BinaryFormatter();
+        //private void loadPhones()
+        //{
+        //    BinaryReader br;
+        //    FileStream fs;
 
-            try
-            {
-                fs = new FileStream("data.dat", FileMode.Open);
-            }
-            catch
-            {
-                MessageBox.Show("Error, reading file.");
-                return false;
-            }
+        //    CPhone phone = new CPhone();
 
-            while (fs.Position < fs.Length)
-            {
-                CPhone obj = (CPhone)bf.Deserialize(fs);
-                phonesList.Add(obj);
-            }
-            fs.Close();
-            return true;
-        }
+        //    try
+        //    {
+        //        fs = new FileStream("data.dat", FileMode.Open);
+        //        br = new BinaryReader(fs);
+        //    }
+        //    catch (IOException err)
+        //    {
+        //        MessageBox.Show(err.Message + " Cannot open file.");
+        //        return;
+        //    }
 
-        private void Form2_Shown(object sender, EventArgs e)
-        {
-            if (!loadPhones()) //чете от файл и записва в List телефоните
-            {
-                Close(); //затваря формата, ако не е прочетен данновия файл
-            }
-        }
+        //    while (br.PeekChar() != -1)
+        //    {
+        //        try
+        //        {
+        //            phone.brand = br.ReadString();
+        //            phone.model = br.ReadString();
+        //            phone.os = br.ReadString();
+        //            phone.osVersion = br.ReadString();
+        //            phone.memory = br.ReadString();
+        //            phone.camera = br.ReadString();
+        //        }
+        //        catch (IOException err)
+        //        {
+        //            MessageBox.Show(err.Message + " Cannot read from file");
+        //        }
+        //        phonesList.Add(phone);
+        //    }
+        //}
     }
 }
 

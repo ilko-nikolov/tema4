@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace tema4
 {
     public partial class Form3 : Form
     {
- 
+        List<CPhone> phonesList = new List<CPhone>();
+
         public Form3()
         {
             InitializeComponent();
         }
-
 
         private bool validate()
         {
@@ -79,15 +71,7 @@ namespace tema4
 
             if (!validate()) { return; } //има празни полета
 
-
-            FileStream fs;
-            try { fs = new FileStream("data.dat", FileMode.OpenOrCreate); }
-            catch { MessageBox.Show("Error when creating or opening file."); return; }
-
-            BinaryFormatter bf = new BinaryFormatter();
-
             CPhone phone = new CPhone();
-
             phone.brand = brandTxtBox.Text;
             phone.model = modelTxtBox.Text;
             phone.os = osTxtBox.Text;
@@ -95,13 +79,18 @@ namespace tema4
             phone.memory = memoryTxtBox.Text;
             phone.camera = cameraTxtBox.Text;
 
-            bf.Serialize(fs, phone);
-            fs.Close();
+            phonesList.Add(phone);
+
+            XmlSerialization.WriteToXmlFile<List<CPhone>>("data.xml", phonesList);
+
+            brandTxtBox.Text = modelTxtBox.Text = osTxtBox.Text = osVerTxtBox.Text = memoryTxtBox.Text = cameraTxtBox.Text = "";
+            
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            try { phonesList = XmlSerialization.ReadFromXmlFile<List<CPhone>>("data.xml"); }
+            catch { }
         }
     }
 }
