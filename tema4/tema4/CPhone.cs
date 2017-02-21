@@ -18,6 +18,11 @@ namespace tema4
         public string memory;
         
         public string display;
+        public string cpu;
+        public string gpu;
+        public string chipset;
+        public string battery;
+        public string sensors;
         //public CPhone() { }
     }
 }
