@@ -16,7 +16,8 @@ namespace tema4
         public string os;
         public string osVersion;
         public string memory;
-
+        
+        public string display;
         //public CPhone() { }
     }
 }
