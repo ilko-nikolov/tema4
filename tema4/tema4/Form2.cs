@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gsmarena_scrape;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace tema4
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            brandLbl.Text = modelLbl.Text = osLbl.Text = osVerLbl.Text = memoryLbl.Text = cameraLbl.Text = "";
+            //brandLbl.Text = modelLbl.Text = osLbl.Text = osVerLbl.Text = memoryLbl.Text = pcamLbl.Text = "";
             //изчистване на label-ите, където ще се появи информацията за намерения телефон
 
             //loadPhones();
@@ -40,15 +41,36 @@ namespace tema4
             listBox1.Items.Clear();
             foreach(var phone in phonesList)
             {
-                if (phone.brand.Contains(brandTxtBox.Text) &&
-                    phone.model.Contains(modelTxtBox.Text) &&
-                    phone.os.Contains(osTxtBox.Text) &&
-                    phone.osVersion.Contains(osVerTxtBox.Text) &&
-                    phone.memory.Contains(memoryTxtBox.Text) &&
-                    phone.camera.Contains(cameraTxtBox.Text)
+                if (phone.Brand.Contains(brandTxtBox.Text) &&
+                    phone.Model.Contains(modelTxtBox.Text) &&
+                    phone.Body.Dimensions.Contains(dimTxtBox.Text) &&
+                    phone.Body.Weight.Contains(wgTxtBox.Text) &&
+                    phone.Body.SIM.Contains(simTxtBox.Text) &&
+                    phone.Display.Type.Contains(typeTxtBox.Text) &&
+                    phone.Display.Size.Contains(sizeTxtBox.Text) &&
+                    phone.Display.Resolution.Contains(resTxtBox.Text) &&
+                    phone.Display.Protection.Contains(proTxtBox.Text) &&
+                    phone.Platform.OS.Contains(osTxtBox.Text) &&
+                    phone.Platform.Chipset.Contains(chipTxtBox.Text) &&
+                    phone.Platform.CPU.Contains(cpuTxtBox.Text) &&
+                    phone.Platform.GPU.Contains(gpuTxtBox.Text) &&
+                    phone.Memory.Internal.Contains(memTxtBox.Text) &&
+                    phone.Memory.CardSlot.Contains(sdTxtBox.Text) &&
+                    phone.Camera.Primary.Contains(pcamTxtBox.Text) &&
+                    phone.Camera.Features.Contains(featTxtBox.Text) &&
+                    phone.Camera.Video.Contains(vidTxtBox.Text) &&
+                    phone.Camera.Secondary.Contains(scamTxtBox.Text) &&
+                    phone.Connectivity.WLAN.Contains(wlanTxtBox.Text) &&
+                    phone.Connectivity.Bluetooth.Contains(bluTxtBox.Text) &&
+                    phone.Connectivity.GPS.Contains(gpsTxtBox.Text) &&
+                    phone.Connectivity.NFC.Contains(nfcTxtBox.Text) &&
+                    phone.Connectivity.Radio.Contains(radTxtBox.Text) &&
+                    phone.Connectivity.USB.Contains(usbTxtBox.Text) &&
+                    phone.Battery.Contains(batTxtBox.Text) &&
+                    phone.Sensors.Contains(senTxtBox.Text)
                     )
                 {
-                    listBox1.Items.Add(phone.brand + " " + phone.model);
+                    listBox1.Items.Add(phone.Brand + " " + phone.Model);
                     elements.Add(elemNumber);
                 }
                 elemNumber++;
@@ -58,12 +80,33 @@ namespace tema4
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             CPhone phone = phonesList.ElementAt<CPhone>(elements.ElementAt<int>(listBox1.SelectedIndex));
-            brandLbl.Text = "Brand: " + phone.brand;
-            modelLbl.Text = "Model: " + phone.model;
-            osLbl.Text = "OS: " + phone.os;
-            osVerLbl.Text = "OS version: " + phone.osVersion;
-            memoryLbl.Text = "Memory: " + phone.memory;
-            cameraLbl.Text = "Camera: " + phone.camera;
+            brandLbl.Text = "Brand: " + phone.Brand;
+            modelLbl.Text = "Model: " + phone.Model;
+            dimLbl.Text = "Brand: " + phone.Body.Dimensions;
+            wgLbl.Text = "Model: " + phone.Body.Weight;
+            simLbl.Text = "Brand: " + phone.Body.SIM;
+            typeLbl.Text = "Model: " + phone.Display.Type;
+            sizeLbl.Text = "Model: " + phone.Display.Size;
+            resLbl.Text = "Brand: " + phone.Display.Resolution;
+            proLbl.Text = "Model: " + phone.Display.Protection;
+            osLbl.Text = "OS: " + phone.Platform.OS;
+            chipLbl.Text = "Model: " + phone.Platform.Chipset;
+            cpuLbl.Text = "Brand: " + phone.Platform.GPU;
+            gpuLbl.Text = "Model: " + phone.Platform.GPU;
+            memLbl.Text = "Memory: " + phone.Memory.Internal;
+            sdLbl.Text = "Model: " + phone.Memory.CardSlot;
+            pcamLbl.Text = "Brand: " + phone.Camera.Primary;
+            scamLbl.Text = "Model: " + phone.Camera.Secondary;
+            featLbl.Text = "Model: " + phone.Camera.Features;
+            vidLbl.Text = "Brand: " + phone.Camera.Video;
+            wlanLbl.Text = "Model: " + phone.Connectivity.WLAN;
+            bluLbl.Text = "Model: " + phone.Connectivity.Bluetooth;
+            gpsLbl.Text = "Brand: " + phone.Connectivity.GPS;
+            nfcLbl.Text = "Model: " + phone.Connectivity.NFC;
+            radLbl.Text = "Model: " + phone.Connectivity.Radio;
+            usbLbl.Text = "Brand: " + phone.Connectivity.USB;
+            batLbl.Text = "Model: " + phone.Battery;
+            senLbl.Text = "Camera: " + phone.Sensors;
         }
 
         //private void loadPhones()
