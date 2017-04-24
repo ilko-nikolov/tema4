@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace gsmarena_scrape
+namespace tema4
 {
     [Serializable]
     public class CPhone

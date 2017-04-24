@@ -82,7 +82,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.gpsTxtBox = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.nfcTxtBox = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.vidTxtBox = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -101,6 +100,7 @@
             this.label52 = new System.Windows.Forms.Label();
             this.pcamTxtBox = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -527,13 +527,6 @@
             this.label43.TabIndex = 195;
             this.label43.Text = "GPS:";
             // 
-            // nfcTxtBox
-            // 
-            this.nfcTxtBox.Location = new System.Drawing.Point(403, 242);
-            this.nfcTxtBox.Name = "nfcTxtBox";
-            this.nfcTxtBox.Size = new System.Drawing.Size(168, 20);
-            this.nfcTxtBox.TabIndex = 194;
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -679,11 +672,23 @@
             this.label53.TabIndex = 176;
             this.label53.Text = "Primary camera:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboBox1.Location = new System.Drawing.Point(403, 239);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(168, 21);
+            this.comboBox1.TabIndex = 215;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 367);
+            this.ClientSize = new System.Drawing.Size(657, 391);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -704,7 +709,6 @@
             this.Controls.Add(this.label42);
             this.Controls.Add(this.gpsTxtBox);
             this.Controls.Add(this.label43);
-            this.Controls.Add(this.nfcTxtBox);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.vidTxtBox);
             this.Controls.Add(this.label45);
@@ -816,7 +820,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox gpsTxtBox;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox nfcTxtBox;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox vidTxtBox;
         private System.Windows.Forms.Label label45;
@@ -838,5 +841,6 @@
         private System.Windows.Forms.Label senLbl;
         private System.Windows.Forms.Label usbLbl;
         private System.Windows.Forms.Label radLbl;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

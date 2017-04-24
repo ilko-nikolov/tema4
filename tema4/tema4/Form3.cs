@@ -1,4 +1,4 @@
-﻿using gsmarena_scrape;
+﻿using tema4;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -124,7 +124,7 @@ namespace tema4
             phone.Connectivity.WLAN = wlanTxtBox.Text;
             phone.Connectivity.Bluetooth = bluTxtBox.Text;
             phone.Connectivity.GPS = gpsTxtBox.Text;
-            phone.Connectivity.NFC = nfcTxtBox.Text;
+            //phone.Connectivity.NFC = nfcTxtBox.Text;
             phone.Connectivity.Radio = radTxtBox.Text;
             phone.Connectivity.USB = usbTxtBox.Text;
             phone.Battery = batTxtBox.Text;
@@ -137,7 +137,7 @@ namespace tema4
             = typeTxtBox.Text = sizeTxtBox.Text = resTxtBox.Text = proTxtBox.Text = osTxtBox.Text 
             = chipTxtBox.Text = cpuTxtBox.Text = gpuTxtBox.Text = memTxtBox.Text = sdTxtBox.Text 
             = pcamTxtBox.Text = featTxtBox.Text = vidTxtBox.Text = scamTxtBox.Text = wlanTxtBox.Text 
-            = bluTxtBox.Text = gpsTxtBox.Text = nfcTxtBox.Text = radTxtBox.Text = usbTxtBox.Text = 
+            = bluTxtBox.Text /*= gpsTxtBox.Text = nfcTxtBox.Text*/ = radTxtBox.Text = usbTxtBox.Text = 
             batTxtBox.Text = senTxtBox.Text = "";
             
         }
