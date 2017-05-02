@@ -109,7 +109,7 @@
             this.memoryCardComboBox.Name = "memoryCardComboBox";
             this.memoryCardComboBox.Size = new System.Drawing.Size(121, 32);
             this.memoryCardComboBox.TabIndex = 121;
-            this.memoryCardComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryCardComboBox_SelectedIndexChanged);
+            this.memoryCardComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // wlanComboBox
             // 
@@ -124,7 +124,7 @@
             this.wlanComboBox.Name = "wlanComboBox";
             this.wlanComboBox.Size = new System.Drawing.Size(121, 32);
             this.wlanComboBox.TabIndex = 120;
-            this.wlanComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryCardComboBox_SelectedIndexChanged);
+            this.wlanComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // radioComboBox
             // 
@@ -139,7 +139,7 @@
             this.radioComboBox.Name = "radioComboBox";
             this.radioComboBox.Size = new System.Drawing.Size(122, 32);
             this.radioComboBox.TabIndex = 119;
-            this.radioComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryCardComboBox_SelectedIndexChanged);
+            this.radioComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // nfcComboBox
             // 
@@ -154,7 +154,7 @@
             this.nfcComboBox.Name = "nfcComboBox";
             this.nfcComboBox.Size = new System.Drawing.Size(121, 32);
             this.nfcComboBox.TabIndex = 118;
-            this.nfcComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryCardComboBox_SelectedIndexChanged);
+            this.nfcComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // gpsComboBox
             // 
@@ -169,7 +169,7 @@
             this.gpsComboBox.Name = "gpsComboBox";
             this.gpsComboBox.Size = new System.Drawing.Size(121, 32);
             this.gpsComboBox.TabIndex = 117;
-            this.gpsComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryCardComboBox_SelectedIndexChanged);
+            this.gpsComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // bluetoothComboBox
             // 
@@ -184,7 +184,7 @@
             this.bluetoothComboBox.Name = "bluetoothComboBox";
             this.bluetoothComboBox.Size = new System.Drawing.Size(121, 32);
             this.bluetoothComboBox.TabIndex = 116;
-            this.bluetoothComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryCardComboBox_SelectedIndexChanged);
+            this.bluetoothComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // addButton
             // 

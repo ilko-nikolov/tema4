@@ -23,7 +23,7 @@ namespace tema4
         private void Add_Load(object sender, EventArgs e)
         { 
             error = Color.FromArgb(255, 150, 150);
-            //memoryCardComboBox.SelectedIndex = wlanComboBox.SelectedIndex = bluetoothComboBox.SelectedIndex = gpsComboBox.SelectedIndex = nfcComboBox.SelectedIndex = radioComboBox.SelectedIndex = 0;
+            
             Controls.OfType<ComboBox>().ToList().ForEach(ComboBox => ComboBox.SelectedIndex = 0);
             errorLabel.Visible = false;
         }
@@ -33,13 +33,54 @@ namespace tema4
             if (isValid())
             {
                 //todo: add phone to list
-                
+
+                CPhone newPhone = new CPhone();
+
+                newPhone.Brand = brandAddBox.Text;
+                newPhone.Model = modelAddBox.Text;
+                newPhone.Body.Dimensions = dimensionsAddBox.Text;
+                newPhone.Body.Weight = weightAddBox.Text;
+                newPhone.Body.SIM = simAddBox.Text;
+                newPhone.Display.Type = displayTypeAddBox.Text;
+                newPhone.Display.Size = displaySizeAddBox.Text;
+                newPhone.Display.Resolution = resolutionAddBox.Text;
+                newPhone.Display.Protection = displayProtectionAddBox.Text;
+                newPhone.Platform.OS = operatingSystemAddBox.Text;
+                newPhone.Platform.Chipset = chipsetAddBox.Text;
+                newPhone.Platform.CPU = cpuAddBox.Text;
+                newPhone.Platform.GPU = gpsAddBox.Text;
+                newPhone.Battery = batteryAddBox.Text;
+                newPhone.Memory.Internal = internalMemoryAddBox.Text;
+                newPhone.Memory.CardSlot = memoryCardComboBox.Text;
+                newPhone.Memory.CardSlot += (memoryCardAddBox.Text != "") ? " - " + memoryCardAddBox : null;
+                newPhone.Camera.Primary = primaryCameraAddBox.Text;
+                newPhone.Camera.Secondary = secondaryCameraAddBox.Text;
+                newPhone.Camera.Features = cameraFeaturesAddBox.Text;
+                newPhone.Camera.Video = videoAddBox.Text;
+                newPhone.Connectivity.WLAN = wlanComboBox.Text;
+                newPhone.Connectivity.WLAN += (wlanAddBox.Text != "") ? " - " + wlanAddBox.Text : null;
+                newPhone.Connectivity.Bluetooth = bluetoothComboBox.Text;
+                newPhone.Connectivity.Bluetooth += (bluetoothAddBox.Text != "") ? " - " + bluetoothAddBox.Text : null;
+                newPhone.Connectivity.GPS = gpsComboBox.Text;
+                newPhone.Connectivity.GPS += (bluetoothAddBox.Text != "") ? " - " + bluetoothAddBox.Text : null;
+                newPhone.Connectivity.NFC = nfcComboBox.Text;
+                newPhone.Connectivity.NFC += (nfcAddBox.Text != "") ? " - " + nfcAddBox.Text : null;
+                newPhone.Connectivity.Radio = radioComboBox.Text;
+                newPhone.Connectivity.Radio += (radioAddBox.Text != "") ? " - " + radioAddBox.Text : null;
+                newPhone.Connectivity.USB = usbAddBox.Text;
+                newPhone.Sensors = sensorsAddBox.Text;
+
+                CPhone.phonesList.Add(newPhone);
+
+                XmlSerialization.WriteToXmlFile<List<CPhone>>("data.xml", CPhone.phonesList);
+
+                resetButton_Click(null, null);
             }
 
         }
 
         private void requiredAddBox_TextChanged(object sender, EventArgs e)
-        {
+        {   //
             TextBox requiredTextBox = sender as TextBox;
             if (requiredTextBox.BackColor == error)
                 requiredTextBox.BackColor = Color.White;
@@ -47,7 +88,7 @@ namespace tema4
         }
 
         private bool isValid()
-        {
+        { //validation
             bool status = true;
             if (brandAddBox.Text == "") { brandAddBox.BackColor = error; status = false; }
             if (modelAddBox.Text == "") { modelAddBox.BackColor = error; status = false; }
@@ -60,7 +101,7 @@ namespace tema4
             return status;
         }
 
-        private void memoryCardComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
 

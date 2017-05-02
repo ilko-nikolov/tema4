@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace tema4
 {
@@ -57,5 +58,10 @@ namespace tema4
         public CConnectivity Connectivity = new CConnectivity();
         public string Sensors { set; get; }
         public string Battery { set; get; }
+        
+
+        public static List<CPhone> phonesList = new List<CPhone>();
+        //public List<CPhone> PhonesList { get => phonesList; set => phonesList = value; }
+
     }
 }
