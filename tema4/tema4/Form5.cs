@@ -62,7 +62,7 @@ namespace tema4
             }
         }
 
-        void ShowResults()
+        void ShowResults() //изпълнява се само при натискане на бутона searchButton в AdvancedSearch.cs
         {
             results1.Location = advancedSearch1.Location;
             results1.Size = advancedSearch1.Size;

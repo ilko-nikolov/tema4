@@ -15,6 +15,8 @@ namespace tema4
         public delegate void customHandler();
         public event customHandler ShowResults;
 
+        private List<CPhone> advancedSearchList = new List<CPhone>();
+
         public AdvancedSearch()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace tema4
         private void Find(string sender)
         {
             int elemNumber = 0;
-            Results.resultsList.Clear();
+            advancedSearchList.Clear();
 
             foreach (var phone in CPhone.phonesList)
             {
@@ -60,12 +62,13 @@ namespace tema4
 
                     if (sender=="searchButton")
                     {
-                        Results.resultsList.Add(phone);
+                        advancedSearchList.Add(phone);
                     }                    
                 }
             }
             if (sender == "searchButton")
             {
+                Results.resultsList = new List<CPhone>(advancedSearchList);
                 ShowResults();
                 return;
             }
