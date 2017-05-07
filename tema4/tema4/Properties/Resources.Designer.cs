@@ -61,11 +61,31 @@ namespace tema4.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aboutbox {
+            get {
+                object obj = ResourceManager.GetObject("aboutbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to data.dat.
         /// </summary>
         internal static string FILENAME {
             get {
                 return ResourceManager.GetString("FILENAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_close {
+            get {
+                object obj = ResourceManager.GetObject("window_close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
