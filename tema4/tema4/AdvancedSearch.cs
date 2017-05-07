@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace tema4
@@ -22,7 +16,7 @@ namespace tema4
             InitializeComponent();
         }
 
-        private void Find(string sender)
+        public void Find(string sender)
         {
             int elemNumber = 0;
             advancedSearchList.Clear();

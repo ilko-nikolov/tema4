@@ -61,6 +61,16 @@ namespace tema4.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aboutbox {
+            get {
+                object obj = ResourceManager.GetObject("aboutbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to data.dat.
         /// </summary>
         internal static string FILENAME {

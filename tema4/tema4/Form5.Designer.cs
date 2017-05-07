@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menu1 = new tema4.Menu();
-            this.search1 = new tema4.Search();
             this.results1 = new tema4.Results();
             this.add1 = new tema4.Add();
             this.advancedSearch1 = new tema4.AdvancedSearch();
@@ -44,19 +43,8 @@
             this.menu1.Location = new System.Drawing.Point(0, -2);
             this.menu1.Margin = new System.Windows.Forms.Padding(0);
             this.menu1.Name = "menu1";
-            this.menu1.Size = new System.Drawing.Size(827, 37);
+            this.menu1.Size = new System.Drawing.Size(876, 37);
             this.menu1.TabIndex = 0;
-            // 
-            // search1
-            // 
-            this.search1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.search1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.search1.Location = new System.Drawing.Point(9, 44);
-            this.search1.Margin = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.search1.Name = "search1";
-            this.search1.Size = new System.Drawing.Size(808, 45);
-            this.search1.TabIndex = 1;
             // 
             // results1
             // 
@@ -64,10 +52,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.results1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.results1.Location = new System.Drawing.Point(9, 98);
+            this.results1.Location = new System.Drawing.Point(9, 44);
             this.results1.Margin = new System.Windows.Forms.Padding(0, 9, 0, 9);
             this.results1.Name = "results1";
-            this.results1.Size = new System.Drawing.Size(808, 480);
+            this.results1.Size = new System.Drawing.Size(857, 614);
             this.results1.TabIndex = 2;
             // 
             // add1
@@ -80,7 +68,7 @@
             this.add1.Location = new System.Drawing.Point(9, 44);
             this.add1.Margin = new System.Windows.Forms.Padding(0, 9, 0, 0);
             this.add1.Name = "add1";
-            this.add1.Size = new System.Drawing.Size(808, 534);
+            this.add1.Size = new System.Drawing.Size(857, 614);
             this.add1.TabIndex = 3;
             // 
             // advancedSearch1
@@ -94,7 +82,7 @@
             this.advancedSearch1.Margin = new System.Windows.Forms.Padding(0, 9, 0, 0);
             this.advancedSearch1.MinimumSize = new System.Drawing.Size(500, 0);
             this.advancedSearch1.Name = "advancedSearch1";
-            this.advancedSearch1.Size = new System.Drawing.Size(808, 534);
+            this.advancedSearch1.Size = new System.Drawing.Size(857, 614);
             this.advancedSearch1.TabIndex = 4;
             // 
             // Form5
@@ -102,15 +90,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(35)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(826, 587);
-            this.Controls.Add(this.results1);
-            this.Controls.Add(this.search1);
+            this.ClientSize = new System.Drawing.Size(875, 667);
             this.Controls.Add(this.menu1);
-            this.Controls.Add(this.add1);
             this.Controls.Add(this.advancedSearch1);
+            this.Controls.Add(this.add1);
+            this.Controls.Add(this.results1);
             this.Name = "Form5";
             this.Text = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
+            this.Shown += new System.EventHandler(this.Form5_Shown);
             this.ResumeLayout(false);
 
         }
@@ -118,7 +106,6 @@
         #endregion
 
         private Menu menu1;
-        private Search search1;
         private Results results1;
         private Add add1;
         private AdvancedSearch advancedSearch1;

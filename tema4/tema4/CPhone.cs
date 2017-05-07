@@ -61,7 +61,5 @@ namespace tema4
         
 
         public static List<CPhone> phonesList = new List<CPhone>();
-        //public List<CPhone> PhonesList { get => phonesList; set => phonesList = value; }
-
     }
 }
